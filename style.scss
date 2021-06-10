@@ -1,0 +1,476 @@
+*{
+    box-sizing: border-box !important;
+    outline: none !important;
+}
+%t{
+    transition: all 0.3s;
+}
+$main: #FB6356;
+$mainTrans: #fb6456b6;
+::selection{
+    background-color: #fd3b2a;
+    color: white;
+}
+header .container-fluid .row > div{
+    height: 120vh;
+}
+header .container-fluid .row > .left{
+    background: url(imgs/top-left-bg.jpg);
+    background-position: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    color: white;
+    padding:0px 0px 0px 60px;
+    h1{
+        font-family: cursive;
+        font-weight: bolder;
+        font-size: 3.5rem;
+    }
+    p{
+        font-weight: 500;
+        letter-spacing: 2.5px;
+    }
+    button{
+        font-size: 14px;
+        background-color: white;
+        color: $main;
+        font-weight: bold;
+        padding: 10px 10px;
+        border: 0px;
+        border-radius: 3px;
+        width: 200px;
+        &:active{
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+header .container-fluid .row > .right{
+    background: url(imgs/slide-02.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .n , .p{
+        width: 50px;
+        height: 50px;
+        background-color: $mainTrans;
+        border-radius: 100px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        @extend %t;
+        user-select: none;
+        &:hover{
+            background-color: $main;
+        }
+    }
+}
+@media(max-width: 991.98px){
+    header .container-fluid .row > .left{
+        height: 50vh;
+        align-items: center;
+        padding: 0px;
+    }
+}
+
+/* about section*/
+#about{
+    margin-top: 30px;
+    padding: 100px 30px 0px 30px;
+    width: 100%;
+    h6{
+        position: relative;
+        font-size: 15px;
+        color: #fb5849;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding-left: 40px;
+        &::before{
+            content: "";
+            width: 30px;
+            height: 1px;
+            background-color: $main;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+        }
+    }
+    .h1{
+        line-height: 40px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+        font-weight: 900;
+        color: #2a2a2a;
+        padding-right: 120px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 25px;
+        color: #2a2a2a;
+        margin-bottom: 25px;
+        a{
+            text-decoration: none !important;
+            color: #0192e6;
+            text-decoration: none;
+            background-color: transparent;
+            @extend %t;
+            &:hover{
+                color: #0068a5;
+            }
+        }
+    }
+    .pic{
+        background: url(imgs/about-video-bg.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 507px;
+        background-size: cover;
+        background-position: bottom;
+        padding: 0px;
+        margin: 12px 0px 12px 0px;
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:  70px;
+            height: 70px;
+            background-color: $main;
+            border-radius: 100px;
+            color: white;
+            @extend %t;
+            cursor: pointer;
+            &:hover{
+                background-color: $mainTrans;
+            }
+        }
+    }
+}
+@media(max-width: 991.98px){
+    #about{
+        padding: 50px 0px;
+        .pics{
+            margin:0px;
+            padding: 0px 12px;
+        }
+        .pics img{
+            margin: 0px 0px 0px 0px;
+            padding: 0px;
+        }
+        .pics :nth-child(1){
+            padding-right: 10px;
+        }
+        .pics :nth-child(3){
+            padding-left: 10px;
+        }
+    }
+    #about .row .left{
+        padding: 50px 0px 10px 0px !important;
+        margin:0px;
+    }
+    #about .row .left .inside-left{
+        padding: 0px 10px;
+    }
+    .pic{
+        margin: 0px !important;
+        padding: 0px !important;
+        height: width !important;
+    }
+}
+/*start chefs*/
+#chefs{
+    padding: 100px 0px;
+    background-color: #FFFAFA;
+    .head{
+        text-align: center;
+        h6{
+            color: $main;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        h2{
+            font-weight: bolder;
+            color: black;
+        }
+    }
+    .up > div > div > .chef{
+        margin-top: 50px;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 3px;
+        text-align: center;
+        position: relative;
+        @extend %t;
+        img{
+            width: 100%;
+        }
+        h4{
+            margin-top: 20px;
+            font-weight: bolder;
+            @extend %t;
+        }
+        .overlay{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: calc(100% - 10px);
+            height: calc(100% - 105px);
+            background-color: #2a2a2a00;
+            border-radius: 3px;
+            color: #2a2a2a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @extend %t;
+            i{
+                @extend %t;
+                padding: 15px;
+                background-color: white;
+                font-size: 15px;
+                border-radius: 100px;
+                cursor: pointer;
+                opacity: 0;
+                &:hover{
+                    background-color: $main;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 991.98px){
+    .up .row > div{
+        margin-bottom: 30px;
+    }
+}
+.active{
+    // display: none;
+    border: 1px solid $main !important;
+    color: $main;
+    h4{
+        color: $main !important;
+    }
+    .overlay{
+        background-color: #2a2a2ad0 !important;
+        i{
+            opacity: 1 !important;
+        }
+    }
+}
+/* Start Contact us*/
+#contact{
+    color: white;
+    background: url(imgs/reservation-bg.jpg);
+    width: 100%;
+    background-size: cover;
+    .row{
+        padding: 100px 0px;
+        margin: 120px 0px 0px 0px;
+        .left{
+            .h6{
+                position: relative;
+                &::after{
+                    content: "";
+                    width: 15px;
+                    height: 1px;
+                    background-color: white;
+                    position: absolute;
+                    top: 50%;
+                    left: -20px;
+                }
+            }
+            .h1{
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+            .row{
+                margin: 0px !important;
+                padding: 0px !important;
+                > div > div{
+                    position: relative;
+                    background-color: white;
+                    color: #2a2a2a;
+                    text-align: center;
+                    padding: 20px 0px;
+                    border-radius: 5px;
+                    margin: 30px 0px;
+                    h4{
+                        margin-top: 30px;
+                    }
+                    i{
+                        transform-origin: center center;
+                        background-color: $main;
+                        padding: 25px;
+                        position: absolute;
+                        top: 0;
+                        left: calc(50% - 12.5px);
+                        transform: translate(-50% , -50%);
+                        color: white;
+                        font-size: 20px;
+                        border-radius: 100px;
+                        cursor: pointer;
+                    }
+                    code{
+                        display:block;
+                        margin: 10px 0px;
+                        a{
+                            color: #2a2a2a;
+                            @extend %t;
+                            &:hover{
+                                color: $main;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        h2{
+            text-align: center;
+            padding: 25px 0px;
+            color: black;
+            font-weight: bolder;
+        }
+        .right{
+            background-color: white;
+            border-radius: 6px;
+            padding-bottom: 20px;
+        }
+        form{
+            margin: 0;
+            padding: 0;
+            div{
+                input , select , textarea{
+                    margin: 10px 0;
+                    color: gray;
+                    padding: 10px 20px;
+                    display: block;
+                    width: 100%;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    background-color: #fff;
+                    background-clip: padding-box;
+                    border: 1px solid #ced4da;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    border-radius: .25rem;
+                    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    border: solid 1px;
+                    &::placeholder{
+                        color: gray;
+                    }
+                    &:focus{
+                        border: solid 1px $main;
+                    }
+                }
+                textarea{
+                    border: gray 1px solid;
+                    color: black;
+                    height: 150px;
+                    margin-bottom: 20px;
+                    resize: none;
+                }
+                #submit{
+                    margin: 0px 0px 20px ;
+                    background: $main;
+                    @extend %t;
+                    color: white;
+                    font-weight: bold;
+                    &:hover{
+                        background: $mainTrans;
+                    }
+                }
+            }
+        }
+    }
+}
+/*meal's section*/
+#meals{
+    margin-top: 100px;
+    .head{
+        margin-bottom: 80px;
+        h6{
+            font-size: 15px;
+            color: #fb5849;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            line-height: 40px;
+            margin: 20px 0px 25px 0px !important;
+            font-size: 30px;
+            font-weight: 900;
+            color: #2a2a2a;
+        }
+    }
+    .meals-head{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 80px;
+        .meal{
+            text-align: center;
+            cursor: pointer;
+        }
+        .bf , .l{
+            margin-right: 20px !important;
+        }
+    }
+    .dishes{
+        .row > div > div{
+            display: flex;
+            margin: 15px 0px;
+            align-items: center;
+            img{
+                margin-right: 20px;
+            }
+            div.price{
+                width: 70px;
+                height: 70px;
+                background-color: #fb5849;
+                border-radius: 3px;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+        }
+    }
+}
+footer{
+    margin: 100px 0px 0px 0px !important;
+    padding: 50px 0px;
+    background-color: $main;
+    color: white;
+    .icons i{
+        padding: 15px;
+        border-radius: 100px;
+        background-color: white;
+        color: $main;
+        font-size: 20px;
+        @extend %t;
+        cursor: pointer;
+        &:hover{
+            color: #333333
+        }
+    }
+    img{
+        cursor: pointer;
+        // max-width: 170px !important;
+        // max-height: 55px !important;
+    }
+    .text{
+        // text-align: right;
+    }
+}
